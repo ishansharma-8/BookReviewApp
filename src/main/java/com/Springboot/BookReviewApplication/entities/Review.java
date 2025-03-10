@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "reviews") // Ensure table name matches database
 public class Review {
 
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
