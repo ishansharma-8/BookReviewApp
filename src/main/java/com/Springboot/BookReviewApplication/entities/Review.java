@@ -3,7 +3,7 @@ package com.Springboot.BookReviewApplication.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "reviews") // Ensure table name matches database
+@Table(name = "reviews")
 public class Review {
 
     @Id
