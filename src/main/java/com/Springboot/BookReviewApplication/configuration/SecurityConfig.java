@@ -22,13 +22,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable())  // 🔹 Disable CSRF (important for Postman testing)
+                .csrf(csrf -> csrf.disable())  
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/users/register", "/users/login", "/reviews/**").permitAll() // 🔹 Allow access to these APIs
-                        .anyRequest().authenticated()  // 🔹 Other endpoints require authentication
+                        .requestMatchers("/users/register", "/users/login", "/reviews/**").permitAll() 
+                        .anyRequest().authenticated()  
                 )
-                .formLogin(login -> login.disable())  // 🔹 Disable default Spring Security login form
-                .httpBasic(basic -> basic.disable()); // 🔹 Disable basic authentication (optional)
+                .formLogin(login -> login.disable())  
+                .httpBasic(basic -> basic.disable()); 
 
         return http.build();
     }
