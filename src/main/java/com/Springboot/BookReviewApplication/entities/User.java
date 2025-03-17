@@ -11,7 +11,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;  // Primary key (userId)
+    private Long id;  
 
     private String name;
     private String email;
@@ -20,10 +20,10 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Review> reviews;
 
-    //  Default constructor
+    
     public User() {}
 
-    //  Parameterized constructor
+
     public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
@@ -31,7 +31,7 @@ public class User {
     }
 
     //  Getters and Setters
-    public Long getId() {  //  This is the userId
+    public Long getId() {   
         return id;
     }
 
