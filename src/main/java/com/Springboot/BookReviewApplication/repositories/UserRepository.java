@@ -1,12 +1,13 @@
 package com.Springboot.BookReviewApplication.repositories;
-import com.Springboot.BookReviewApplication.entities.Review;
+
+import com.Springboot.BookReviewApplication.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
+import java.util.Optional;
 
 @Repository
-public interface ReviewRepository extends JpaRepository<Review, Long>{
-    List<Review> findByUserId(Long userId);
 
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmail(String email);
 }
